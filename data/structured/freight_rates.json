@@ -1,0 +1,46 @@
+[
+  {
+    "rate_id": "RT-2026-001",
+    "carrier": "HMM",
+    "origin": "KRPUS",
+    "destination": "USLAX",
+    "container_type": "40HC",
+    "base_rate": 1850,
+    "surcharges": {
+      "BAF": 350,
+      "CAF": 45,
+      "THC_origin": 185,
+      "THC_dest": 320,
+      "doc_fee": 50,
+      "seal_fee": 15
+    },
+    "total_rate": 2815,
+    "currency": "USD",
+    "valid_from": "2026-03-01",
+    "valid_to": "2026-04-30",
+    "contract_type": "SPOT",
+    "remarks": "Peak season surcharge may apply after Apr 15"
+  },
+  {
+    "rate_id": "RT-2026-002",
+    "carrier": "MAERSK",
+    "origin": "KRPUS",
+    "destination": "USLAX",
+    "container_type": "40HC",
+    "base_rate": 2100,
+    "surcharges": {
+      "BAF": 280,
+      "CAF": 40,
+      "THC_origin": 195,
+      "THC_dest": 310,
+      "doc_fee": 65,
+      "seal_fee": 15
+    },
+    "total_rate": 3005,
+    "currency": "USD",
+    "valid_from": "2026-03-01",
+    "valid_to": "2026-05-31",
+    "contract_type": "CONTRACT",
+    "remarks": "Guaranteed space for contract customers"
+  }
+]

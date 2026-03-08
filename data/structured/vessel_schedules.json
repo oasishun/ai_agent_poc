@@ -1,0 +1,46 @@
+[
+  {
+    "schedule_id": "VSL-2026-001",
+    "vessel_name": "HMM ALGECIRAS",
+    "carrier": "HMM",
+    "voyage_no": "0125E",
+    "route": {
+      "origin": { "port_code": "KRPUS", "port_name": "Busan", "terminal": "HBCT" },
+      "destination": { "port_code": "USLAX", "port_name": "Los Angeles", "terminal": "APM" },
+      "via_ports": [
+        { "port_code": "CNSHA", "port_name": "Shanghai", "eta": "2026-04-05", "etd": "2026-04-06" }
+      ]
+    },
+    "etd": "2026-04-01T08:00:00Z",
+    "eta": "2026-04-18T14:00:00Z",
+    "transit_days": 17,
+    "available_space": { "20GP": 45, "40GP": 30, "40HC": 25 },
+    "cut_off": {
+      "doc_cutoff": "2026-03-29T17:00:00Z",
+      "cargo_cutoff": "2026-03-30T12:00:00Z"
+    },
+    "service_name": "PS7",
+    "status": "OPEN"
+  },
+  {
+    "schedule_id": "VSL-2026-002",
+    "vessel_name": "MAERSK EDINBURGH",
+    "carrier": "MAERSK",
+    "voyage_no": "206W",
+    "route": {
+      "origin": { "port_code": "KRPUS", "port_name": "Busan", "terminal": "BNCT" },
+      "destination": { "port_code": "USLAX", "port_name": "Los Angeles", "terminal": "Pier400" },
+      "via_ports": []
+    },
+    "etd": "2026-04-03T06:00:00Z",
+    "eta": "2026-04-17T10:00:00Z",
+    "transit_days": 14,
+    "available_space": { "20GP": 20, "40GP": 15, "40HC": 10 },
+    "cut_off": {
+      "doc_cutoff": "2026-03-31T17:00:00Z",
+      "cargo_cutoff": "2026-04-01T12:00:00Z"
+    },
+    "service_name": "TP6",
+    "status": "OPEN"
+  }
+]

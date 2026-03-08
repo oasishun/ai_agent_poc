@@ -1,0 +1,71 @@
+[
+  {
+    "scenario_id": "BK-EVAL-001",
+    "name": "기본 부킹 — 부산→LA 일반화물",
+    "description": "가장 기본적인 부킹 시나리오. Agent가 스케줄 조회, 요율 비교, 추천, 부킹 생성까지 완료해야 함.",
+    "user_messages": [
+      "부산에서 LA로 40HC 1대 부킹해줘. 4월 초 출항 희망.",
+      "1번으로 해줘"
+    ],
+    "expected_behaviors": [
+      "search_schedules 호출",
+      "get_freight_rates 호출",
+      "search_knowledge 호출 (tribal knowledge 참조)",
+      "최소 2개 옵션 추천",
+      "각 옵션의 비용, transit time, 특이사항 제시",
+      "Decision Trace 생성 (carrier_selection type)",
+      "create_booking 호출",
+      "부킹 확인 정보 제공"
+    ],
+    "evaluation_criteria": {
+      "task_completion": "부킹 확인번호가 반환되어야 함",
+      "decision_quality": "추천 근거에 cost, transit_time, reliability 중 최소 2개 포함",
+      "knowledge_utilization": "tribal knowledge에서 관련 팁이 1개 이상 반영",
+      "max_tool_calls": 8,
+      "max_latency_seconds": 30
+    }
+  },
+  {
+    "scenario_id": "BK-EVAL-002",
+    "name": "긴급 부킹 — 최단 transit time 우선",
+    "description": "고객이 납기가 촉박하여 가장 빠른 출항을 요청하는 시나리오.",
+    "user_messages": [
+      "급한 화물인데 부산에서 LA까지 가장 빨리 갈 수 있는 방법 찾아줘. 40GP 2대.",
+      "가장 빠른 걸로 바로 부킹해줘"
+    ],
+    "expected_behaviors": [
+      "transit_time 기준 정렬된 추천",
+      "직항 서비스 우선 추천",
+      "긴급 부킹 시 주의사항 안내 (cut-off 임박 여부 등)",
+      "Decision Trace에 '속도 우선' 근거 기록"
+    ],
+    "evaluation_criteria": {
+      "task_completion": "가장 짧은 transit time 옵션이 1순위로 추천되어야 함",
+      "decision_quality": "transit time이 추천 근거의 핵심 요소여야 함",
+      "knowledge_utilization": "optional",
+      "max_tool_calls": 8,
+      "max_latency_seconds": 30
+    }
+  },
+  {
+    "scenario_id": "BK-EVAL-003",
+    "name": "Knowledge 활용 — Tribal knowledge 기반 의사결정",
+    "description": "Tribal knowledge의 선사별 팁이 추천에 반영되는지 검증.",
+    "user_messages": [
+      "부산에서 LA로 reefer 컨테이너 1대 부킹 가능할까? 다음 달 출항이면 좋겠어."
+    ],
+    "expected_behaviors": [
+      "search_knowledge에서 reefer 관련 tribal knowledge 검색",
+      "'reefer는 최소 2주 전 사전 부킹 필요' 팁 반영",
+      "장비 부족 관련 notice 참조",
+      "추천 시 reefer 가용성 중심 평가"
+    ],
+    "evaluation_criteria": {
+      "task_completion": "reefer 가용 옵션을 제시해야 함",
+      "decision_quality": "reefer 특수사항이 추천 근거에 포함",
+      "knowledge_utilization": "tribal knowledge에서 reefer 관련 팁 최소 1개 반영 필수",
+      "max_tool_calls": 10,
+      "max_latency_seconds": 30
+    }
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "shipment_id": "SHP-2026-001",
+    "booking_id": "BK-2026-001",
+    "bl_number": "HDMU1234567",
+    "container_number": "HDMU1234567",
+    "carrier": "HMM",
+    "current_status": "IN_TRANSIT",
+    "current_location": {
+      "lat": 33.12,
+      "lon": 140.56,
+      "description": "Pacific Ocean, East of Japan"
+    },
+    "eta_original": "2026-04-18T14:00:00Z",
+    "eta_current": "2026-04-19T08:00:00Z",
+    "eta_delay_hours": 18,
+    "milestones": [
+      {
+        "event": "BOOKING_CONFIRMED",
+        "timestamp": "2026-03-25T10:00:00Z",
+        "location": "KRPUS",
+        "detail": "Booking confirmed: BK-2026-001"
+      },
+      {
+        "event": "GATE_IN",
+        "timestamp": "2026-03-30T09:30:00Z",
+        "location": "KRPUS/HBCT",
+        "detail": "Container gated in at HBCT"
+      },
+      {
+        "event": "LOADED",
+        "timestamp": "2026-04-01T06:00:00Z",
+        "location": "KRPUS/HBCT",
+        "detail": "Loaded on vessel HMM ALGECIRAS"
+      },
+      {
+        "event": "DEPARTED",
+        "timestamp": "2026-04-01T08:00:00Z",
+        "location": "KRPUS",
+        "detail": "Vessel departed Busan"
+      },
+      {
+        "event": "TRANSSHIPMENT_ARRIVAL",
+        "timestamp": "2026-04-05T14:00:00Z",
+        "location": "CNSHA",
+        "detail": "Arrived at Shanghai for transshipment"
+      },
+      {
+        "event": "TRANSSHIPMENT_DEPARTURE",
+        "timestamp": "2026-04-07T02:00:00Z",
+        "location": "CNSHA",
+        "detail": "Departed Shanghai (delayed 20h due to congestion)"
+      },
+      {
+        "event": "IN_TRANSIT",
+        "timestamp": "2026-04-10T00:00:00Z",
+        "location": "Pacific Ocean",
+        "detail": "In transit to Los Angeles"
+      }
+    ],
+    "anomalies": [
+      {
+        "type": "ETA_DELAY",
+        "detected_at": "2026-04-07T03:00:00Z",
+        "severity": "MEDIUM",
+        "description": "Shanghai transshipment 20시간 지연으로 ETA 18시간 후연",
+        "root_cause": "Shanghai port congestion"
+      }
+    ]
+  }
+]

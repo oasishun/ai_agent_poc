@@ -1,0 +1,39 @@
+[
+  {
+    "template_id": "TMPL-40HC-GENERAL",
+    "name": "Standard 40HC General Cargo",
+    "container_type": "40HC",
+    "cargo_category": "GENERAL",
+    "required_docs": ["Commercial Invoice", "Packing List", "B/L Draft", "VGM Certificate"],
+    "special_requirements": [],
+    "default_incoterms": "FOB",
+    "remarks": "Standard template for general cargo in 40HC containers"
+  },
+  {
+    "template_id": "TMPL-40HC-REEFER",
+    "name": "Reefer 40HC Template",
+    "container_type": "40HC",
+    "cargo_category": "REEFER",
+    "required_docs": [
+      "Commercial Invoice",
+      "Packing List",
+      "B/L Draft",
+      "VGM Certificate",
+      "Phytosanitary Certificate",
+      "Reefer Setting Form"
+    ],
+    "special_requirements": ["Temperature setting", "Ventilation setting", "Pre-trip inspection"],
+    "default_incoterms": "CIF",
+    "remarks": "Book at least 2 weeks in advance. Limited equipment availability."
+  },
+  {
+    "template_id": "TMPL-20GP-GENERAL",
+    "name": "Standard 20GP General Cargo",
+    "container_type": "20GP",
+    "cargo_category": "GENERAL",
+    "required_docs": ["Commercial Invoice", "Packing List", "B/L Draft", "VGM Certificate"],
+    "special_requirements": [],
+    "default_incoterms": "FOB",
+    "remarks": "Standard template for general cargo in 20GP containers"
+  }
+]

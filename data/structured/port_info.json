@@ -1,0 +1,29 @@
+[
+  {
+    "port_code": "KRPUS",
+    "port_name": "Busan",
+    "country": "KR",
+    "timezone": "Asia/Seoul",
+    "terminals": [
+      { "code": "HBCT", "name": "Hanjin Busan Container Terminal", "operator": "HMM" },
+      { "code": "BNCT", "name": "Busan New Container Terminal", "operator": "BNCT" },
+      { "code": "PNC", "name": "Pusan Newport Container Terminal", "operator": "DP World" }
+    ],
+    "congestion_level": "LOW",
+    "avg_dwell_time_hours": 48,
+    "working_hours": "24/7"
+  },
+  {
+    "port_code": "USLAX",
+    "port_name": "Los Angeles",
+    "country": "US",
+    "timezone": "America/Los_Angeles",
+    "terminals": [
+      { "code": "APM", "name": "APM Terminals", "operator": "APM" },
+      { "code": "Pier400", "name": "Pier 400 Maersk", "operator": "Maersk" }
+    ],
+    "congestion_level": "MEDIUM",
+    "avg_dwell_time_hours": 96,
+    "working_hours": "06:00-02:00"
+  }
+]
